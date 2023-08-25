@@ -1,0 +1,8 @@
+export {default as Contacts} from "./Contacts"
+export {default as Credit} from "./Credit"
+export {default as Guarantee} from "./Guarantee"
+export {default as Main} from "./Main"
+export {default as Service} from "./Service"
+export {default as TradeIn} from "./TradeIn"
+export {default as NewsAll} from "./NewsAll"
+export {default as Model} from "./Model"
