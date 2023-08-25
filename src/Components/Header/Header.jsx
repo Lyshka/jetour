@@ -20,7 +20,7 @@ const Header = () => {
   }, [open]);
 
   return (
-    <header className="sticky top-0 lg:px-10 px-5 z-[60] lg:h-20 h-[60px] flex justify-between items-center w-full bg-white shadowHeader">
+    <header id="header" className={`sticky top-0 lg:px-10 px-5 z-[60] lg:h-20 h-[60px] flex justify-between items-center w-full bg-white shadowHeader`}>
       <Link to={"/"} className="flex justify-center items-center gap-x-3">
         <svg
           className="lg:w-[125px] lg:h-[25px] w-[107px] h-[37px]"
@@ -228,9 +228,8 @@ const Header = () => {
             >
               <div className="grid grid-cols-3 px-10 gap-x-[50px]">
                 {cars.map(({ img, price, subtitle, title, model }, idx) => (
-                  <Link to={model} onClick={() => setOpenMenu(false)}>
+                  <Link key={idx} to={model} onClick={() => setOpenMenu(false)}>
                     <div
-                      key={idx}
                       className="flex flex-col cursor-pointer justify-center items-center"
                     >
                       <div>
