@@ -4,7 +4,7 @@ import { about } from "../../constants/about";
 
 const About = () => {
   return (
-    <div className="py-[30px] flex lg:flex-row flex-col w-full justify-center gap-x-[60px] items-start lg:px-10">
+    <section className="py-[30px] flex lg:flex-row flex-col w-full justify-center gap-x-[60px] items-start lg:px-10">
       <img
         className="object-cover w-full h-[396px] lg:w-[580px] lg:h-[275px]"
         src="https://jetour-atlantm.by/uploads/dealers-web-main/xe/tm/XEtMXPsbOy.png"
@@ -79,7 +79,7 @@ const About = () => {
           ))}
         </Carousel>
       </div>
-    </div>
+    </section>
   );
 };
 export default About;

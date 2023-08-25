@@ -1,6 +1,6 @@
 const AboutContact = () => {
   return (
-    <div className="pt-[60px] lg:pb-[30px] lg:px-10 flex w-full items-center justify-center gap-x-[62px] lg:flex-row flex-col">
+    <section className="pt-[60px] lg:pb-[30px] lg:px-10 flex w-full items-center justify-center gap-x-[62px] lg:flex-row flex-col">
       <img
         className="lg:w-1/2 lg:h-[570px] h-[216px] w-full object-cover"
         src="https://jetour-atlantm.by/uploads/contacts/kv/be/KVBed5SpGZ.png"
@@ -45,7 +45,7 @@ const AboutContact = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 export default AboutContact;

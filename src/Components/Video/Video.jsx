@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Video = () => {
   return (
-    <div className="py-[30px] w-full lg:h-screen h-[700px] relative">
+    <section className="py-[30px] w-full lg:h-screen h-[700px] relative">
       <video
         loop={true}
         className="w-full h-full object-cover absolute top-0"
@@ -24,7 +24,7 @@ const Video = () => {
           УЗНАТЬ БОЛЬШЕ
         </Link>
       </div>
-    </div>
+    </section>
   );
 };
 export default Video;

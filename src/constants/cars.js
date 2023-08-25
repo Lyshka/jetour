@@ -72,12 +72,38 @@ export const cars = [
         ],
       },
     },
-    maxspeed: "180",
-    tank: "57",
-    consumption: "8,4",
-    carlength: "4590",
-    power: "190",
-    place: "5",
+    info: [
+      {
+        icon: "https://jetour-atlantm.by/uploads/car-model-landing/lb/3m/lB3MPBztS1_AUTO_AUTO.webp",
+        value: "180 км/ч",
+        desc: "макс. скорость",
+      },
+      {
+        icon: "https://jetour-atlantm.by/uploads/car-model-landing/ek/ci/eKci0uZ3fN_AUTO_AUTO.webp",
+        value: "57 л",
+        desc: "бак",
+      },
+      {
+        icon: "https://jetour-atlantm.by/uploads/car-model-landing/8s/xg/8SxGiD4ebE_AUTO_AUTO.webp",
+        value: "8,4 л",
+        desc: "комб. расход",
+      },
+      {
+        icon: "https://jetour-atlantm.by/uploads/car-model-landing/s5/mc/S5Mc9sc78e.png",
+        value: "4590 мм",
+        desc: "длина",
+      },
+      {
+        icon: "https://jetour-atlantm.by/uploads/car-model-landing/n5/gs/n5gs8KM3I9_AUTO_AUTO.webp",
+        value: "190 л. с",
+        desc: "мощность",
+      },
+      {
+        icon: "https://jetour-atlantm.by/uploads/car-model-landing/f7/7t/f77tSxRuUW_AUTO_AUTO.webp",
+        value: "5",
+        desc: "полноценных мест",
+      },
+    ],
     titlepage: "Космотехнологический кроссовер",
     descpage: `Jetour DASHING - кроссовер, созданный для тех, кто стремится превзойти свои ожидания и освоить новые горизонты. Новый кроссовер от Jetour представляет собой воплощение элегантности, мощи и утонченности, позволяющей ощутить истинное удовольствие от вождения на любой дороге, в любой ситуации. 
     <br/>
@@ -462,12 +488,38 @@ export const cars = [
         ],
       },
     },
-    maxspeed: "190",
-    tank: "57",
-    consumption: "8",
-    carlength: "4858",
-    power: "244",
-    place: "5",
+    info: [
+      {
+        icon: "https://jetour-atlantm.by/uploads/car-model-landing/lb/3m/lB3MPBztS1_AUTO_AUTO.webp",
+        value: "190 км/ч",
+        desc: "макс. скорость",
+      },
+      {
+        icon: "https://jetour-atlantm.by/uploads/car-model-landing/ek/ci/eKci0uZ3fN_AUTO_AUTO.webp",
+        value: "57 л",
+        desc: "объем бака",
+      },
+      {
+        icon: "https://jetour-atlantm.by/uploads/car-model-landing/8s/xg/8SxGiD4ebE_AUTO_AUTO.webp",
+        value: "8 л",
+        desc: "комб. расход",
+      },
+      {
+        icon: "https://jetour-atlantm.by/uploads/car-model-landing/s5/mc/S5Mc9sc78e.png",
+        value: "4858 мм",
+        desc: "длина",
+      },
+      {
+        icon: "https://jetour-atlantm.by/uploads/car-model-landing/n5/gs/n5gs8KM3I9_AUTO_AUTO.webp",
+        value: "244 л с",
+        desc: "мощность",
+      },
+      {
+        icon: "https://jetour-atlantm.by/uploads/car-model-landing/f7/7t/f77tSxRuUW_AUTO_AUTO.webp",
+        value: "5",
+        desc: "полноценных мест",
+      },
+    ],
     titlepage: "Большой семейный кроссовер",
     descpage: `Jetour X90PLUS – вместительный кроссовер, созданный для комфортных семейных поездок на дальние расстояния. Он прежде всего ориентирован на аудиторию, у которой увлекательные путешествия на автомобиле – это образ жизни. Просторный X90PLUS от Jetour – яркий пример того, насколько полной и привлекательной может быть гармония между людьми, жизнью и автомобилем.<br/><br/>
 

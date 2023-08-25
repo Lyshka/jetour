@@ -15,7 +15,10 @@ import { Footer, Header } from "./Components";
 const App = () => {
   return (
     <div>
-      <Header />
+      <Routes>
+        <Route path="/:id" element={<Model />} />
+      </Routes>
+        <Header />
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/credit" element={<Credit />} />
@@ -24,7 +27,6 @@ const App = () => {
         <Route path="/tradein" element={<TradeIn />} />
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/newsall" element={<NewsAll />} />
-        <Route path="/:id" element={<Model />} />
       </Routes>
       <Footer />
     </div>

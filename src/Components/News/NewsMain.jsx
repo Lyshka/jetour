@@ -5,7 +5,7 @@ import { Carousel } from "@material-tailwind/react";
 
 const News = () => {
   return (
-    <div className="lg:py-[30px] md:h-full md:py-5 lg:h-auto h-screen flex flex-col justify-center items-center w-full mb-[20px]">
+    <section className="lg:py-[30px] md:h-full md:py-5 lg:h-auto h-screen flex flex-col justify-center items-center w-full mb-[20px]">
       <h2 className="font-bold text-[22px] lg:text-4xl leading-[29px] lg:leading-[45px] text-center w-full text-[#4c4c4c]">
         Новости и события
       </h2>
@@ -81,7 +81,7 @@ const News = () => {
           ВСЕ НОВОСТИ
         </Link>
       </div>
-    </div>
+    </section>
   );
 };
 export default News;

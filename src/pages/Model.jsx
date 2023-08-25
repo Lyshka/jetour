@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 
 import { cars } from "../constants/cars";
-import { HeaderModel, TopMenu } from "../Components";
+import { HeaderModel, TopMenu, BottomMenu, SliderModelFirst } from "../Components";
 import { useEffect } from "react";
 
 const Model = () => {
@@ -10,112 +10,20 @@ const Model = () => {
   const model = cars.find((el) => el.model === params.id);
 
   useEffect(() => {
-    const head = window.document.getElementById("header");
+    const head = window.document.getElementById("header")
 
-    (head.style.display = "none");
-  }, []);
+    head.style.display = "none"
+  }, [])
 
   return (
     <section>
-      <HeaderModel img={model.mainphoto} />
+      <HeaderModel />
 
       <TopMenu photo={model.mainphoto} title={model.model}/>
 
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
-      <div>dkasd;las</div>
+      <SliderModelFirst title={model.title} interior={model.interior} body={model.body} info={model.info}/>
+
+      <BottomMenu />
     </section>
   );
 };

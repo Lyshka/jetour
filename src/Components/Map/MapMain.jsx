@@ -2,7 +2,7 @@ import { Map, YMaps } from "@pbe/react-yandex-maps";
 
 const MapYandex = () => {
   return (
-    <div className="lg:py-[30px] lg:px-10 lg:w-auto w-full lg:mb-0 mb-[-100px]">
+    <section className="lg:py-[30px] lg:px-10 lg:w-auto w-full lg:mb-0 mb-[-100px]">
       <div className="relative">
         <YMaps
           query={{
@@ -265,7 +265,7 @@ const MapYandex = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 export default MapYandex;

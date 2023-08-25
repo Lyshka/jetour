@@ -1,6 +1,6 @@
 const NewsAll = () => {
   return (
-    <div>NewsAll</div>
+    <section>NewsAll</section>
   )
 }
 export default NewsAll

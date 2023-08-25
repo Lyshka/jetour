@@ -2,7 +2,7 @@ import { AboutContact, Map } from "../Components";
 
 const Contacts = () => {
   return (
-    <div>
+    <section>
       <AboutContact />
 
       <Map />
@@ -30,7 +30,7 @@ const Contacts = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 export default Contacts;
