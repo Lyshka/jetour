@@ -9,6 +9,10 @@
     --app-height: 100%;
   }
 
+  html {
+    @apply scroll-smooth;
+  }
+
   body {
     @apply font-Roboto overflow-x-hidden lg:overflow-x-clip;
   }
@@ -31,5 +35,9 @@
 
   .shadowColorPick {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px;
+  }
+
+  .menu::-webkit-scrollbar {
+    width: 0;
   }
 }

@@ -104,12 +104,15 @@ export const cars = [
         desc: "полноценных мест",
       },
     ],
-    titlepage: "Космотехнологический кроссовер",
-    descpage: `Jetour DASHING - кроссовер, созданный для тех, кто стремится превзойти свои ожидания и освоить новые горизонты. Новый кроссовер от Jetour представляет собой воплощение элегантности, мощи и утонченности, позволяющей ощутить истинное удовольствие от вождения на любой дороге, в любой ситуации. 
-    <br/>
-    <br/>
- 
-    Поистине космический во всем.`,
+    about: {
+      titlepage: "Космотехнологический кроссовер",
+      descpage: `Jetour DASHING - кроссовер, созданный для тех, кто стремится превзойти свои ожидания и освоить новые горизонты. Новый кроссовер от Jetour представляет собой воплощение элегантности, мощи и утонченности, позволяющей ощутить истинное удовольствие от вождения на любой дороге, в любой ситуации. 
+      <br/>
+      <br/>
+   
+      Поистине космический во всем.`,
+      img: "https://jetour-atlantm.by/uploads/car-model-landing/d4/vk/D4vKvRL3ZO_AUTO_AUTO.webp",
+    },
     slider: [
       "https://jetour-atlantm.by/uploads/car-model-landing/kb/f9/KBF9srwzLe_AUTO_AUTO.webp",
       "https://jetour-atlantm.by/uploads/car-model-landing/aw/vp/awVPnHDefG_AUTO_AUTO.webp",
@@ -359,57 +362,60 @@ export const cars = [
         ],
       },
     ],
-    delivery: [
-      {
-        title: "Галактический черный",
-        img: "https://jetour-atlantm.by/uploads/car-model-landing/nn/ld/NNLdY3apTx.webp",
-        complect: [
-          "Dashing | Комл.: Luxury | Двигатель: 1.5T+6DCT | Кузов: Black | Интерьер: Black-red",
-          "Dashing | Комл.: Luxury + | Двигатель: 1.6T+7DCT | Кузов: Black | Интерьер: Black-red",
-          "Dashing | Комл.: Luxury + | Двигатель: 1.6T+7DCT | Кузов: Black | Интерьер: Gray-white",
-        ],
-      },
-      {
-        title: "Арктический белый",
-        img: "https://jetour-atlantm.by/uploads/car-model-landing/c0/ix/c0IXoN67Af.webp",
-        complect: [
-          "Dashing | Компл.: Elite | Двигатель: 1.5T+6DCT | Кузов: White | Интерьер: Black-red",
-          "Dashing | Компл.: Luxury + | Двигатель: 1.6T+7DCT | Кузов: White | Интерьер: Black-red",
-          "Dashing | Компл.: Luxury + | Двигатель: 1.6T+7DCT | Кузов: White | Интерьер: Gray-white",
-          "Dashing | Компл.: Luxury | Двигатель: 1.6T+7DCT | Кузов: White | Интерьер: Gray-white",
-        ],
-      },
-      {
-        title: "Океанический синий",
-        img: "https://jetour-atlantm.by/uploads/car-model-landing/91/mv/91MvNVMbk4.webp",
-        complect: [
-          "Dashing | Компл.: Elite | Двигатель: 1.5T+6DCT | Кузов: Red | Интерьер: Black-red",
-          "Dashing | Компл.: Luxury | Двигатель: 1.5T+6DCT | Кузов: Blue | Интерьер: Gray-white",
-          "Dashing | Компл.: Luxury | Двигатель: 1.5T+6DCT | Кузов: Blue | Интерьер: Black-red",
-          "Dashing | Компл.: Luxury + | Двигатель: 1.6T+7DCT | Кузов: Blue | Интерьер: Black-red",
-          "Dashing | Компл.: Luxury + | Двигатель: 1.6T+7DCT | Кузов: Blue | Интерьер: Gray-white",
-        ],
-      },
-      {
-        title: "Призрачный серый",
-        img: "https://jetour-atlantm.by/uploads/car-model-landing/ju/tr/jUtrNjogK8.webp",
-        complect: [
-          "Dashing | Компл.: Luxury | Двигатель: 1.5T+6DCT | Кузов: Gray | Интерьер: Gray-white",
-          "Dashing | Компл.: Luxury + | Двигатель: 1.6T+7DCT | Кузов: Gray | Интерьер: Black-red",
-          "Dashing | Компл.: Luxury + | Двигатель: 1.6T+7DCT | Кузов: Gray | Интерьер: Gray-white",
-        ],
-      },
-      {
-        title: "Страстный красный",
-        img: "https://jetour-atlantm.by/uploads/car-model-landing/t8/rn/T8rnyZU2gl.webp",
-        complect: [
-          "Dashing | Компл.: Luxury | Двигатель: 1.5T+6DCT | Кузов: Red | Интерьер: Black-red",
-          "Dashing | Компл.: Luxury | Двигатель: 1.5T+6DCT | Кузов: Red | Интерьер: Gray-white",
-          "Dashing | Компл.: Luxury + | Двигатель: 1.6T+7DCT | Кузов: Red | Интерьер: Black-red",
-          "Dashing | Компл.: Luxury + | Двигатель: 1.6T+7DCT | Кузов: Red | Интерьер: Gray-white",
-        ],
-      },
-    ],
+    delivery: {
+      img: "https://jetour-atlantm.by/uploads/car-model-landing/z0/aq/Z0aQaomMJY_AUTO_AUTO.png",
+      carsdelivery: [
+        {
+          title: "Галактический черный",
+          img: "https://jetour-atlantm.by/uploads/car-model-landing/nn/ld/NNLdY3apTx.webp",
+          complect: [
+            "Dashing | Комл.: Luxury | Двигатель: 1.5T+6DCT | Кузов: Black | Интерьер: Black-red",
+            "Dashing | Комл.: Luxury + | Двигатель: 1.6T+7DCT | Кузов: Black | Интерьер: Black-red",
+            "Dashing | Комл.: Luxury + | Двигатель: 1.6T+7DCT | Кузов: Black | Интерьер: Gray-white",
+          ],
+        },
+        {
+          title: "Арктический белый",
+          img: "https://jetour-atlantm.by/uploads/car-model-landing/c0/ix/c0IXoN67Af.webp",
+          complect: [
+            "Dashing | Компл.: Elite | Двигатель: 1.5T+6DCT | Кузов: White | Интерьер: Black-red",
+            "Dashing | Компл.: Luxury + | Двигатель: 1.6T+7DCT | Кузов: White | Интерьер: Black-red",
+            "Dashing | Компл.: Luxury + | Двигатель: 1.6T+7DCT | Кузов: White | Интерьер: Gray-white",
+            "Dashing | Компл.: Luxury | Двигатель: 1.6T+7DCT | Кузов: White | Интерьер: Gray-white",
+          ],
+        },
+        {
+          title: "Океанический синий",
+          img: "https://jetour-atlantm.by/uploads/car-model-landing/91/mv/91MvNVMbk4.webp",
+          complect: [
+            "Dashing | Компл.: Elite | Двигатель: 1.5T+6DCT | Кузов: Red | Интерьер: Black-red",
+            "Dashing | Компл.: Luxury | Двигатель: 1.5T+6DCT | Кузов: Blue | Интерьер: Gray-white",
+            "Dashing | Компл.: Luxury | Двигатель: 1.5T+6DCT | Кузов: Blue | Интерьер: Black-red",
+            "Dashing | Компл.: Luxury + | Двигатель: 1.6T+7DCT | Кузов: Blue | Интерьер: Black-red",
+            "Dashing | Компл.: Luxury + | Двигатель: 1.6T+7DCT | Кузов: Blue | Интерьер: Gray-white",
+          ],
+        },
+        {
+          title: "Призрачный серый",
+          img: "https://jetour-atlantm.by/uploads/car-model-landing/ju/tr/jUtrNjogK8.webp",
+          complect: [
+            "Dashing | Компл.: Luxury | Двигатель: 1.5T+6DCT | Кузов: Gray | Интерьер: Gray-white",
+            "Dashing | Компл.: Luxury + | Двигатель: 1.6T+7DCT | Кузов: Gray | Интерьер: Black-red",
+            "Dashing | Компл.: Luxury + | Двигатель: 1.6T+7DCT | Кузов: Gray | Интерьер: Gray-white",
+          ],
+        },
+        {
+          title: "Страстный красный",
+          img: "https://jetour-atlantm.by/uploads/car-model-landing/t8/rn/T8rnyZU2gl.webp",
+          complect: [
+            "Dashing | Компл.: Luxury | Двигатель: 1.5T+6DCT | Кузов: Red | Интерьер: Black-red",
+            "Dashing | Компл.: Luxury | Двигатель: 1.5T+6DCT | Кузов: Red | Интерьер: Gray-white",
+            "Dashing | Компл.: Luxury + | Двигатель: 1.6T+7DCT | Кузов: Red | Интерьер: Black-red",
+            "Dashing | Компл.: Luxury + | Двигатель: 1.6T+7DCT | Кузов: Red | Интерьер: Gray-white",
+          ],
+        },
+      ],
+    },
     photoForm:
       "https://jetour-atlantm.by/uploads/car-model-landing/y6/k5/Y6k5zp6CYB_AUTO_AUTO.webp",
   },
@@ -520,12 +526,15 @@ export const cars = [
         desc: "полноценных мест",
       },
     ],
-    titlepage: "Большой семейный кроссовер",
-    descpage: `Jetour X90PLUS – вместительный кроссовер, созданный для комфортных семейных поездок на дальние расстояния. Он прежде всего ориентирован на аудиторию, у которой увлекательные путешествия на автомобиле – это образ жизни. Просторный X90PLUS от Jetour – яркий пример того, насколько полной и привлекательной может быть гармония между людьми, жизнью и автомобилем.<br/><br/>
-
- 
-
-    Позвольте себе воплотить мечту о владении автомобилем с непревзойденным  Jetour X90PLUS.`,
+    about: {
+      titlepage: "Большой семейный кроссовер",
+      descpage: `Jetour X90PLUS – вместительный кроссовер, созданный для комфортных семейных поездок на дальние расстояния. Он прежде всего ориентирован на аудиторию, у которой увлекательные путешествия на автомобиле – это образ жизни. Просторный X90PLUS от Jetour – яркий пример того, насколько полной и привлекательной может быть гармония между людьми, жизнью и автомобилем.<br/><br/>
+  
+   
+  
+      Позвольте себе воплотить мечту о владении автомобилем с непревзойденным  Jetour X90PLUS.`,
+      img: "https://jetour-atlantm.by/uploads/car-model-landing/gf/yh/gFyhp8lphK_AUTO_AUTO.webp",
+    },
     slider: [
       "https://jetour-atlantm.by/uploads/car-model-landing/pu/ov/PUOvB1p244.webp",
       "https://jetour-atlantm.by/uploads/car-model-landing/iz/ch/IZCHVE9ft3_AUTO_AUTO.webp",
@@ -763,44 +772,47 @@ export const cars = [
         ],
       },
     ],
-    delivery: [
-      {
-        title: "Галактический черный",
-        img: "https://jetour-atlantm.by/uploads/car-model-landing/3a/wd/3AwDOI7VFE_AUTO_AUTO.webp",
-        complect: [
-          "X90PLUS | Компл.: Luxury | Двигатель: 1.6T+7DCT | Кузов: Black | Интерьер: Red-brown",
-          "(БРОНЬ) X90PLUS | Компл.: Luxury + | Двигатель: 2.0T+7DCT | Кузов: Black | Интерьер: Red-brown",
-          "X90PLUS | Компл.: Luxury + | Двигатель: 2.0T+7DCT | Кузов: Black | Интерьер: Black",
-        ],
-      },
-      {
-        title: "Океанический синий",
-        img: "https://jetour-atlantm.by/uploads/car-model-landing/ks/av/KsAvyacTpo_AUTO_AUTO.webp",
-        complect: [
-          "X90PLUS | Компл.: Luxury | Двигатель: 1.6T+7DCT | Кузов: Blue | Интерьер: Black",
-          "X90PLUS | Компл.: Luxury + | Двигатель: 2.0T+7DCT | Кузов: Blue | Интерьер: Black",
-          "(БРОНЬ) X90PLUS | Компл.: Luxury + | Двигатель: 2.0T+7DCT | Кузов: Blue | Интерьер: Red-brown",
-        ],
-      },
-      {
-        title: "Призрачный серый",
-        img: "https://jetour-atlantm.by/uploads/car-model-landing/hm/n2/hMn2PHZTGn_AUTO_AUTO.webp",
-        complect: [
-          "(БРОНЬ) X90 PLUS | Компл.: Luxury | Двигатель: 1.6T+7DCT | Кузов: Gray | Интерьер: Black",
-          "X90 PLUS | Компл.: Luxury + | Двигатель: 2.0T+7DCT | Кузов: Gray | Интерьер: Black",
-          "X90 PLUS | Компл.: Luxury + | Двигатель: 2.0T+7DCT | Кузов: Gray | Интерьер: Red-brown",
-        ],
-      },
-      {
-        title: "Арктический белый",
-        img: "https://jetour-atlantm.by/uploads/car-model-landing/7u/q0/7Uq0kIRddH_AUTO_AUTO.webp",
-        complect: [
-          "(БРОНЬ) X90 PLUS | Компл.: Luxury + | Двигатель: 2.0T+7DCT | Кузов: White | Интерьер: Black",
-          "X90 PLUS | Компл.: Luxury + | Двигатель: 2.0T+7DCT | Кузов: White | Интерьер: Red-brown",
-          "X90 PLUS | Компл.: Luxury | Двигатель: 1.6T+7DCT | Кузов: White | Интерьер: Black",
-        ],
-      },
-    ],
+    delivery: {
+      img: "https://jetour-atlantm.by/uploads/car-model-landing/qj/bm/QJBMRrL54S.png",
+      carsdelivery: [
+        {
+          title: "Галактический черный",
+          img: "https://jetour-atlantm.by/uploads/car-model-landing/3a/wd/3AwDOI7VFE_AUTO_AUTO.webp",
+          complect: [
+            "X90PLUS | Компл.: Luxury | Двигатель: 1.6T+7DCT | Кузов: Black | Интерьер: Red-brown",
+            "(БРОНЬ) X90PLUS | Компл.: Luxury + | Двигатель: 2.0T+7DCT | Кузов: Black | Интерьер: Red-brown",
+            "X90PLUS | Компл.: Luxury + | Двигатель: 2.0T+7DCT | Кузов: Black | Интерьер: Black",
+          ],
+        },
+        {
+          title: "Океанический синий",
+          img: "https://jetour-atlantm.by/uploads/car-model-landing/ks/av/KsAvyacTpo_AUTO_AUTO.webp",
+          complect: [
+            "X90PLUS | Компл.: Luxury | Двигатель: 1.6T+7DCT | Кузов: Blue | Интерьер: Black",
+            "X90PLUS | Компл.: Luxury + | Двигатель: 2.0T+7DCT | Кузов: Blue | Интерьер: Black",
+            "(БРОНЬ) X90PLUS | Компл.: Luxury + | Двигатель: 2.0T+7DCT | Кузов: Blue | Интерьер: Red-brown",
+          ],
+        },
+        {
+          title: "Призрачный серый",
+          img: "https://jetour-atlantm.by/uploads/car-model-landing/hm/n2/hMn2PHZTGn_AUTO_AUTO.webp",
+          complect: [
+            "(БРОНЬ) X90 PLUS | Компл.: Luxury | Двигатель: 1.6T+7DCT | Кузов: Gray | Интерьер: Black",
+            "X90 PLUS | Компл.: Luxury + | Двигатель: 2.0T+7DCT | Кузов: Gray | Интерьер: Black",
+            "X90 PLUS | Компл.: Luxury + | Двигатель: 2.0T+7DCT | Кузов: Gray | Интерьер: Red-brown",
+          ],
+        },
+        {
+          title: "Арктический белый",
+          img: "https://jetour-atlantm.by/uploads/car-model-landing/7u/q0/7Uq0kIRddH_AUTO_AUTO.webp",
+          complect: [
+            "(БРОНЬ) X90 PLUS | Компл.: Luxury + | Двигатель: 2.0T+7DCT | Кузов: White | Интерьер: Black",
+            "X90 PLUS | Компл.: Luxury + | Двигатель: 2.0T+7DCT | Кузов: White | Интерьер: Red-brown",
+            "X90 PLUS | Компл.: Luxury | Двигатель: 1.6T+7DCT | Кузов: White | Интерьер: Black",
+          ],
+        },
+      ],
+    },
     photoForm:
       "https://jetour-atlantm.by/uploads/car-model-landing/5n/ps/5NpS0E6tC4_AUTO_AUTO.webp",
   },

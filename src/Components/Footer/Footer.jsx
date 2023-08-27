@@ -3,7 +3,7 @@ import { menu } from "../../constants/menu";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#4c4c4c] flex lg:px-10 px-5 pt-8 flex-col w-full">
+    <footer className="bg-[#4c4c4c] flex lg:px-10 px-5 pt-8 flex-col w-full h-full">
       <div className="flex lg:flex-row flex-col justify-start items-start mb-[60px]">
         <div className="flex-1 max-w-[345px]">
           <svg

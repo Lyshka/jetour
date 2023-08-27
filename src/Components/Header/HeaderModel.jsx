@@ -375,7 +375,7 @@ const HeaderModel = () => {
                 {cars.map(({ img, price, subtitle, title, model }, idx) => (
                   <Link
                     key={idx}
-                    to={model}
+                    to={`/${model}`}
                     onClick={() => setOpen((prv) => !prv)}
                   >
                     <div
