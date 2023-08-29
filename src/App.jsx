@@ -1,6 +1,7 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useParams } from "react-router-dom";
 
 import {
+  Cars,
   Contacts,
   Credit,
   Guarantee,
@@ -10,15 +11,12 @@ import {
   Service,
   TradeIn,
 } from "./pages";
-import { Footer, Header } from "./Components";
+import { Footer, Header, NewsSingle } from "./Components";
 
 const App = () => {
   return (
     <div>
-      <Routes>
-        <Route path="/:id" element={<Model />} />
-      </Routes>
-        <Header />
+      <Header />
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/credit" element={<Credit />} />
@@ -27,6 +25,9 @@ const App = () => {
         <Route path="/tradein" element={<TradeIn />} />
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/newsall" element={<NewsAll />} />
+        <Route path="/:id" element={<Model />} />
+        <Route path="/:id/:car" element={<Cars />} />
+        <Route path="/newsall/:news" element={<NewsSingle />} />
       </Routes>
       <Footer />
     </div>

@@ -12,8 +12,8 @@ const News = () => {
 
       <div className="mt-5 flex flex-col justify-center items-center w-full">
         <div className="px-10 hidden lg:grid grid-cols-4 gap-x-5">
-          {news.map(({ title, desc, img, date }, idx) => (
-            <Link key={idx} className="flex group flex-col gap-y-5">
+          {news.slice(0,4).map(({ title, desc, img, date, id }, idx) => (
+            <a href={`/newsall/${id}`} key={idx} className="flex group flex-col gap-y-5">
               <img
                 className="object-cover w-full h-[250px]"
                 src={img}
@@ -28,7 +28,7 @@ const News = () => {
               <div className="h-full flex justify-start items-end">
                 <span className="text-[#7c7f85] leading-5">{date}</span>
               </div>
-            </Link>
+            </a>
           ))}
         </div>
 

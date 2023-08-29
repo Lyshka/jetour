@@ -77,7 +77,7 @@ const Option = ({ idx, img, title, desc, options }) => {
                 src={img}
                 alt=""
               />
-              <h4 className="leading-6 text-center text-[#141B27] opacity-40 lg:w-full lg:max-w-[100%] max-w-[46%] md:text-2xl">
+              <h4 className="leading-6 text-center text-[#141B27] opacity-40 lg:w-full lg:max-w-[100%] max-w-[46%] md:text-2xl lg:text-base">
                 {title}
               </h4>
             </div>

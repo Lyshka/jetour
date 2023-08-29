@@ -1,6 +1,11 @@
+import { useEffect } from "react";
 import { AboutContact, Map } from "../Components";
 
 const Contacts = () => {
+  useEffect(() => {
+    window.document.title = "Контакты"
+  }, [])
+
   return (
     <section>
       <AboutContact />

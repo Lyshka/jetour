@@ -26,6 +26,10 @@ const Model = () => {
     head.style.display = "none";
   }, []);
 
+  useEffect(() => {
+    window.document.title = params.id;
+  }, [params.id]);
+
   return (
     <section>
       <HeaderModel />
@@ -39,19 +43,19 @@ const Model = () => {
         info={model.info}
       />
 
-      <AboutModal about={model.about} />
+      <AboutModal about={model.about} to={model.title}/>
 
       <SliderModelSecond slides={model.slider} />
 
       <Hang hang={model.hang} />
 
-      <DeliveryModal delivery={model.delivery}/>
+      <DeliveryModal delivery={model.delivery} />
 
       <Guarant />
 
-      <FormModal img={model.photoForm}/>
+      <FormModal img={model.photoForm} />
 
-      <BottomMenu />
+      <BottomMenu to={model.title}/>
     </section>
   );
 };

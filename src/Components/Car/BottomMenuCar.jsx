@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import Modal from "../Modal/Modal";
-import { Link } from "react-router-dom";
 
-const BottomMenu = ({ to }) => {
+const BottomMenuCar = () => {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -22,18 +21,12 @@ const BottomMenu = ({ to }) => {
           onClick={() => setOpen((prv) => !prv)}
           className="max-w-[280px] py-[14px] px-[26px] h-11 w-full text-sm font-medium text-center uppercase transition-all duration-300 bg-[#68A598] hover:bg-[#628788] text-white"
         >
-          Консультация
+          Узнать стоимость
         </button>
-        <Link
-          to={to}
-          className="max-w-[280px] py-[14px] px-[26px] h-11 w-full text-sm font-medium text-center uppercase transition-all duration-300 bg-[#68A598] hover:bg-[#628788] text-white"
-        >
-          Комлектации и цены
-        </Link>
       </nav>
 
       {open && <Modal setOpen={setOpen} />}
     </>
   );
 };
-export default BottomMenu;
+export default BottomMenuCar;

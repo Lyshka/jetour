@@ -1,6 +1,11 @@
+import { useEffect } from "react"
 import Layout from "../Components/Layout/Layout"
 
 const TradeIn = () => {
+  useEffect(() => {
+    window.document.title = "Trade-in"
+  }, [])
+
   return (
     <Layout title={"Trade-in"} desc={{__html:`Компания Jetour «Атлант-М» предлагает для клиентов услугу по прием автомобилей в зачет (Trade-In), выкуп автомобилей и комиссионную продажу автомобилей с пробегом.<br /><br />
 

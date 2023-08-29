@@ -52,7 +52,7 @@ const ModalModel = ({ open, img, title, desc, setOpen, refs }) => {
                 >
                   <path d="M10.501 19.9994C10.501 19.4022 10.729 18.8049 11.184 18.3494L25.517 4.01681C26.4287 3.10507 27.9069 3.10507 28.8183 4.01681C29.7297 4.92818 29.7297 6.40611 28.8183 7.31793L16.1359 19.9994L28.8174 32.6813C29.7288 33.5927 29.7288 35.0708 28.8174 35.9821C27.9061 36.8943 26.4283 36.8943 25.5165 35.9821L11.1835 21.6498C10.7286 21.1941 10.501 20.5968 10.501 19.9994Z"></path>
                 </svg>
-                <span className="leading-5 md:text-2xl">
+                <span className="leading-5 md:text-2xl lg:text-base">
                   Смотреть все особенности
                 </span>
               </div>
@@ -61,7 +61,7 @@ const ModalModel = ({ open, img, title, desc, setOpen, refs }) => {
                 {title}
               </h3>
 
-              <p className="mt-[18px] md:text-xl leading-6">{desc}</p>
+              <p className="mt-[18px] md:text-xl lg:text-base leading-6">{desc}</p>
             </div>
 
             <img

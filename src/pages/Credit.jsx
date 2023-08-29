@@ -1,6 +1,11 @@
+import { useEffect } from "react"
 import Layout from "../Components/Layout/Layout"
 
 const Credit = () => {
+  useEffect(() => {
+    window.document.title = "Кредит и лизинг"
+  }, [])
+
   return (
     <Layout title={"Кредит и лизинг на покупку Jetour"} desc={{__html:`<div style="margin-bottom:20px">Кредит или лизинг на покупку автомобиля позволит вам стать владельцем нового Jetour на оптимальных для Вас условиях оплаты.<br /><br />
 
