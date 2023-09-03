@@ -1,6 +1,22 @@
 import { Map, YMaps } from "@pbe/react-yandex-maps";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 const MapYandex = () => {
+  const [mainInfo, setMainInfo] = useState([]);
+
+  const getMainInfo = async () => {
+    const { data } = await axios.get("http://localhost:3000/get-admin-main");
+
+    const newArr = data[0].coord.split(",").map(el => +el.trim())
+
+    setMainInfo(newArr);
+  };
+
+  useEffect(() => {
+    getMainInfo();
+  }, []);
+
   return (
     <section className="lg:py-[30px] lg:px-10 lg:w-auto w-full lg:mb-0 mb-[-100px]">
       <div className="relative">
@@ -12,7 +28,7 @@ const MapYandex = () => {
           <Map
             width={"100%"}
             height={"364px"}
-            defaultState={{ center: [55.75, 37.57], zoom: 9 }}
+            defaultState={{ center: mainInfo, zoom: 16 }}
           />
         </YMaps>
         <div className="lg:absolute flex flex-col justify-start items-start z-20 lg:p-[30px] p-5 bg-white gap-y-5 w-full lg:w-[595px] top-1/2 left-16 -translate-y-1/2">

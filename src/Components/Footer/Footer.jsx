@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 
 const Footer = () => {
   const [tel, setTel] = useState([]);
+  const [mail, setMail] = useState("")
 
   const getMainInfo = async () => {
     const { data } = await axios.get("http://localhost:3000/get-admin-main");
@@ -12,6 +13,7 @@ const Footer = () => {
     const newArr = data[0].contacts.split(",").map((el) => el.trim());
 
     setTel(newArr);
+    setMail(data[0].mail)
   };
 
   useEffect(() => {
@@ -148,7 +150,7 @@ const Footer = () => {
               </li>
             ))}
             <li className="text-white leading-[14px] text-sm">
-              <a href="mailto:Jetour@atlantm.com">Jetour@atlantm.com</a>
+              <a href={`mailto:${mail}`}>{mail}</a>
             </li>
           </ul>
 

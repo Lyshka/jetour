@@ -2,15 +2,20 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 import { cars } from "../../constants/cars";
-import { menu } from "../../constants/menu";
 import axios from "axios";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
   const [openMenuMobile, setOpenMenuMobile] = useState(false);
-
   const [tel, setTel] = useState("")
+  const [pages, setPages] = useState([]);
+
+  const getPages = async () => {
+    const { data } = await axios.get("http://localhost:3000/get-pages");
+
+    setPages(data);
+  };
 
   const getMainInfo = async () => {
     const {data} = await axios.get("http://localhost:3000/get-admin-main")
@@ -32,6 +37,7 @@ const Header = () => {
 
   useEffect(() => {
     getMainInfo()
+    getPages()
   }, [])
 
   return (
@@ -271,8 +277,8 @@ const Header = () => {
             </div>
           )}
         </li>
-        {menu.map(({ name, url }, idx) => (
-          <li key={idx}>
+        {pages.map(({ name, url, id }) => (
+          <li key={id}>
             <Link
               to={url}
               className="hover:text-[#666666] transition-colors duration-300 whitespace-nowrap"
@@ -419,8 +425,8 @@ const Header = () => {
                 ))}
               </div>
             </div>
-            {menu.map(({ name, url }, idx) => (
-              <div key={idx}>
+            {pages.map(({ name, url, id }) => (
+              <div key={id}>
                 <Link
                   onClick={() => setOpen((prv) => !prv)}
                   to={url}

@@ -4,6 +4,10 @@ export const menu = [
     url: "/admin-main",
   },
   {
+    name: "Страницы",
+    url: "/pages",
+  },
+  {
     name: "О нас",
     url: "/admin-about-main",
   },

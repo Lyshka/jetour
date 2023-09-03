@@ -10,7 +10,8 @@ const AdminMain = () => {
   const [titleVideo, setTitleVideo] = useState("");
   const [mainVideo, setMainVideo] = useState("");
   const [coord, setCoord] = useState("");
-  const [contacts, setContacts] = useState("")
+  const [contacts, setContacts] = useState("");
+  const [mail, setMail] = useState("");
 
   const [setpht, setSetpht] = useState("");
   const [setpht2, setSetpht2] = useState("");
@@ -25,7 +26,8 @@ const AdminMain = () => {
     setCoord(data[0].coord);
     setSetpht(data[0].mainPhoto);
     setSetpht2(data[0].mainPhotoMobile);
-    setContacts(data[0].contacts)
+    setContacts(data[0].contacts);
+    setMail(data[0].mail);
   };
 
   const handleSubmit = async () => {
@@ -35,7 +37,8 @@ const AdminMain = () => {
       !coord.length ||
       !setpht.length ||
       !setpht2.length ||
-      !contacts.length
+      !contacts.length ||
+      !mail.length
     ) {
       toast.error("Одно из полей не заполнено!");
     } else {
@@ -49,6 +52,7 @@ const AdminMain = () => {
           mainPhotoMobile: setpht2,
           id: 1,
           contacts,
+          mail,
         }
       );
 
@@ -148,7 +152,10 @@ const AdminMain = () => {
                     htmlFor="title"
                     className="block text-xs font-semibold text-gray-600 uppercase mt-10"
                   >
-                    Контакты <span className="text-[10px] font-normal">(Писать через запятую)</span>
+                    Контакты{" "}
+                    <span className="text-[10px] font-normal">
+                      (Писать через запятую)
+                    </span>
                   </label>
                   <input
                     id="title"
@@ -156,6 +163,30 @@ const AdminMain = () => {
                     name="title"
                     defaultValue={contacts}
                     onChange={(e) => setContacts(e.target.value)}
+                    className="block w-full py-3 px-1 mt-2 
+                                  text-gray-800 appearance-none 
+                                  border-2 border-gray-100
+                                  focus:text-gray-500 focus:outline-none focus:border-gray-200"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="title"
+                    className="block text-xs font-semibold text-gray-600 uppercase mt-10"
+                  >
+                    Почта
+                    <span className="text-[10px] font-normal">
+                      (Писать через запятую)
+                    </span>
+                  </label>
+                  <input
+                    id="title"
+                    type="text"
+                    name="title"
+                    defaultValue={mail}
+                    onChange={(e) => setMail(e.target.value)}
                     className="block w-full py-3 px-1 mt-2 
                                   text-gray-800 appearance-none 
                                   border-2 border-gray-100

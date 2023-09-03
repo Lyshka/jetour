@@ -1,19 +1,31 @@
-import { useEffect } from "react"
-import Layout from "../Components/Layout/Layout"
+import { useEffect, useState } from "react";
+import Layout from "../Components/Layout/Layout";
+import axios from "axios";
 
 const TradeIn = () => {
+  const [tradeIn, setTradeIn] = useState({});
+
+  const getPages = async () => {
+    const { data } = await axios.get("http://localhost:3000/get-pages");
+
+    setTradeIn(data[3]);
+  };
+
   useEffect(() => {
-    window.document.title = "Trade-in"
-  }, [])
+    window.document.title = "Trade-in";
+  }, []);
+
+  useEffect(() => {
+    getPages();
+  }, []);
 
   return (
-    <Layout title={"Trade-in"} desc={{__html:`Компания Jetour «Атлант-М» предлагает для клиентов услугу по прием автомобилей в зачет (Trade-In), выкуп автомобилей и комиссионную продажу автомобилей с пробегом.<br /><br />
-
-    Комиссия — это наиболее выгодный способ продать Ваш автомобиль, при котором вы просто оставляете автомобиль у нас на площадке, а мы занимаемся предпродажной подготовкой и продажей автомобиля по цене, которая Вас устраивает.<br /><br />
-    
-    Зачет (trade in) — это наиболее быстрый и простой способ обменять Ваш автомобиль с пробегом на новый. То есть — Вы приехали на своем автомобиле, а уехали на новом.<br /><br />
-    
-    Выкуп — это наиболее быстрый и простой способ продать Ваш автомобиль нам и получить за него деньги на расчетный счет в течении 1–3 дней.`}}/>
-  )
-}
-export default TradeIn
+    <Layout
+      title={tradeIn.title}
+      desc={{
+        __html: tradeIn.description,
+      }}
+    />
+  );
+};
+export default TradeIn;

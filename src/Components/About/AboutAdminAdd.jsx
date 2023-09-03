@@ -36,8 +36,6 @@ const AboutAdmin = () => {
       navigate("/admin-about-main")
       toast.success("Изменено")
     }
-
-    console.log(title, setpht);
   };
 
   useEffect(() => {

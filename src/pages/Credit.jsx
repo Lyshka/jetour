@@ -1,32 +1,31 @@
-import { useEffect } from "react"
-import Layout from "../Components/Layout/Layout"
+import { useEffect, useState } from "react";
+import Layout from "../Components/Layout/Layout";
+import axios from "axios";
 
 const Credit = () => {
+  const [credit, setCredit] = useState({});
+
+  const getPages = async () => {
+    const { data } = await axios.get("http://localhost:3000/get-pages");
+
+    setCredit(data[0]);
+  };
+
   useEffect(() => {
-    window.document.title = "Кредит и лизинг"
+    window.document.title = "Кредит и лизинг";
+  }, []);
+
+  useEffect(() => {
+    getPages()
   }, [])
 
   return (
-    <Layout title={"Кредит и лизинг на покупку Jetour"} desc={{__html:`<div style="margin-bottom:20px">Кредит или лизинг на покупку автомобиля позволит вам стать владельцем нового Jetour на оптимальных для Вас условиях оплаты.<br /><br />
-
-    Наши специалисты помогут вам:<br /><br />
-    <div>приобрести автомобиль  Jetour с минимальным авансом;</div>
-    <div>оформить кредит на недостающую сумму;</div>
-    <div>подобрать оптимальную программу кредитования.</div>
-       
-       
-       
-       <br />
-    Оформление всех необходимых документов происходит прямо в автоцентрах  Jetour.
-    <br /><br />
-    Наши партнеры:
-    <br /><br />
-    <div>ЗАО «БТА Банк»;</div>
-    <div>ОАО «Сбербанк»;</div>
-    <div>ОАО «Технобанк»;</div>
-    <div>ОАО «Белгазпромбанк»</div>
-    <br />
-    Все автомобили можно приобрести по программе Trade-in</div>`}}/>
-  )
-}
-export default Credit
+    <Layout
+      title={credit.title}
+      desc={{
+        __html: credit.description,
+      }}
+    />
+  );
+};
+export default Credit;

@@ -11,6 +11,14 @@ const HeaderModel = () => {
   const [openMenuMobile, setOpenMenuMobile] = useState(false);
   const [tel, setTel] = useState("")
 
+  const [pages, setPages] = useState([]);
+
+  const getPages = async () => {
+    const { data } = await axios.get("http://localhost:3000/get-pages");
+
+    setPages(data);
+  };
+
   const getMainInfo = async () => {
     const {data} = await axios.get("http://localhost:3000/get-admin-main")
 
@@ -31,6 +39,7 @@ const HeaderModel = () => {
 
   useEffect(() => {
     getMainInfo()
+    getPages()
   }, [])
 
   return (
@@ -270,14 +279,14 @@ const HeaderModel = () => {
             </div>
           )}
         </li>
-        {menu.map(({ name, url }, idx) => (
-          <li key={idx}>
-            <Link
-              to={url}
+        {pages.map(({ name, url, id }) => (
+          <li key={id}>
+            <a
+              href={url}
               className="hover:text-[#666666] transition-colors duration-300 whitespace-nowrap"
             >
               {name}
-            </Link>
+            </a>
           </li>
         ))}
       </ul>
@@ -418,15 +427,15 @@ const HeaderModel = () => {
                 ))}
               </div>
             </div>
-            {menu.map(({ name, url }, idx) => (
-              <div key={idx}>
-                <Link
+            {pages.map(({ name, url, id }) => (
+              <div key={id}>
+                <a
                   onClick={() => setOpen((prv) => !prv)}
-                  to={url}
+                  href={url}
                   className="leading-[130%]"
                 >
                   {name}
-                </Link>
+                </a>
               </div>
             ))}
           </div>
