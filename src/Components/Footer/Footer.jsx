@@ -1,9 +1,28 @@
 import { Link } from "react-router-dom";
 import { menu } from "../../constants/menu";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 const Footer = () => {
+  const [tel, setTel] = useState([]);
+
+  const getMainInfo = async () => {
+    const { data } = await axios.get("http://localhost:3000/get-admin-main");
+
+    const newArr = data[0].contacts.split(",").map((el) => el.trim());
+
+    setTel(newArr);
+  };
+
+  useEffect(() => {
+    getMainInfo();
+  }, []);
+
   return (
-    <footer className="bg-[#4c4c4c] flex lg:px-10 px-5 pt-8 flex-col w-full h-full">
+    <footer
+      id="footer"
+      className="bg-[#4c4c4c] flex lg:px-10 px-5 pt-8 flex-col w-full h-full"
+    >
       <div className="flex lg:flex-row flex-col justify-start items-start mb-[60px]">
         <div className="flex-1 max-w-[345px]">
           <svg
@@ -123,12 +142,11 @@ const Footer = () => {
 
           <ul className="flex flex-col gap-y-4">
             <li className="text-white font-bold leading-[21px]">Контакты</li>
-            <li className="text-white leading-[14px] text-sm">
-              <a href="tel:+375447320000">+375 44 732 00 00</a>
-            </li>
-            <li className="text-white leading-[14px] text-sm">
-              <a href="tel:+375292244004">+375 29 224 40 04</a>
-            </li>
+            {tel.map((el, idx) => (
+              <li key={idx} className="text-white leading-[14px] text-sm">
+                <a href={`tel:${el}`}>{el}</a>
+              </li>
+            ))}
             <li className="text-white leading-[14px] text-sm">
               <a href="mailto:Jetour@atlantm.com">Jetour@atlantm.com</a>
             </li>

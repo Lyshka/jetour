@@ -3,11 +3,22 @@ import { useEffect, useState } from "react";
 
 import { cars } from "../../constants/cars";
 import { menu } from "../../constants/menu";
+import axios from "axios";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
   const [openMenuMobile, setOpenMenuMobile] = useState(false);
+
+  const [tel, setTel] = useState("")
+
+  const getMainInfo = async () => {
+    const {data} = await axios.get("http://localhost:3000/get-admin-main")
+
+    const newArr = data[0].contacts.split(",").map(el => el.trim())
+
+    setTel(newArr[0])
+  }
 
   useEffect(() => {
     const id = window.document.getElementsByTagName("html");
@@ -18,6 +29,10 @@ const Header = () => {
       id[0].style.overflow = "scroll";
     }
   }, [open]);
+
+  useEffect(() => {
+    getMainInfo()
+  }, [])
 
   return (
     <header id="header" className={`sticky top-0 lg:px-10 px-5 z-[60] lg:h-20 h-[60px] flex justify-between items-center w-full bg-white shadowHeader`}>
@@ -271,9 +286,9 @@ const Header = () => {
       <div className="lg:flex hidden justify-center items-center gap-x-10">
         <a
           className="hover:text-[#666666] transition-colors duration-300 text-[#68a598] whitespace-nowrap leading-[130%]"
-          href="tel:+375447320000"
+          href={`tel:${tel}`}
         >
-          +375 44 732 00 00
+          {tel}
         </a>
       </div>
 
@@ -419,9 +434,9 @@ const Header = () => {
 
           <a
             className="leading-[130%] border-t w-full pt-10 border-b-[#b6bcc2] text-[#68a598] mt-10 absolute"
-            href="tel:+375447320000"
+            href={`tel:${tel}`}
           >
-            +375 44 732 00 00
+            {tel}
           </a>
         </div>
       </div>

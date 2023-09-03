@@ -1,23 +1,10 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-import { cars } from "../../constants/cars";
-import { menu } from "../../constants/menu";
-import axios from "axios";
+import { menu } from "../../constants/menuAdmin";
 
-const HeaderModel = () => {
+const HeaderAdmin = () => {
   const [open, setOpen] = useState(false);
-  const [openMenu, setOpenMenu] = useState(false);
-  const [openMenuMobile, setOpenMenuMobile] = useState(false);
-  const [tel, setTel] = useState("")
-
-  const getMainInfo = async () => {
-    const {data} = await axios.get("http://localhost:3000/get-admin-main")
-
-    const newArr = data[0].contacts.split(",").map(el => el.trim())
-
-    setTel(newArr[0])
-  }
 
   useEffect(() => {
     const id = window.document.getElementsByTagName("html");
@@ -29,12 +16,10 @@ const HeaderModel = () => {
     }
   }, [open]);
 
-  useEffect(() => {
-    getMainInfo()
-  }, [])
-
   return (
-    <header className={`relative top-0 lg:px-10 px-5 z-[60] lg:h-20 h-[60px] flex justify-between items-center w-full bg-white shadowHeader`}>
+    <header
+      className={`relative top-0 lg:px-10 px-5 z-[60] lg:h-20 h-[60px] flex justify-between items-center w-full bg-white shadowHeader`}
+    >
       <a href={"/"} className="flex justify-center items-center gap-x-3">
         <svg
           className="lg:w-[125px] lg:h-[25px] w-[107px] h-[37px]"
@@ -224,52 +209,6 @@ const HeaderModel = () => {
       </a>
 
       <ul className="lg:flex hidden justify-center items-center gap-x-6">
-        <li onMouseMove={() => setOpenMenu(true)}>
-          <Link
-            to={"/"}
-            className="hover:text-[#666666] transition-colors duration-300 whitespace-nowrap"
-          >
-            Модельный ряд
-          </Link>
-          {openMenu && (
-            <div
-              className={`absolute top-[80px] bg-white shadowCarMenu py-10 w-full left-0 flex justify-center items-center`}
-              onMouseLeave={() => {
-                setTimeout(() => {
-                  setOpenMenu(false);
-                }, 1000);
-              }}
-            >
-              <div className="grid grid-cols-3 px-10 gap-x-[50px]">
-                {cars.map(({ img, price, subtitle, title, model }, idx) => (
-                  <Link key={idx} to={`/${model}`} onClick={() => setOpenMenu(false)}>
-                    <div
-                      className="flex flex-col cursor-pointer justify-center items-center"
-                    >
-                      <div>
-                        <img
-                          className="w-60 h-[120px] object-cover"
-                          src={img}
-                          alt={title}
-                        />
-                        <div className="flex flex-col mt-[10px] justify-center items-center">
-                          <h2 className="text-center font-bold leading-5">
-                            {title}
-                          </h2>
-                          <p className="text-center leading-5 text-[#4c4c4c]">
-                            {subtitle}
-                          </p>
-                        </div>
-                      </div>
-
-                      <span className="mt-10 leading-5">От {price} р.</span>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          )}
-        </li>
         {menu.map(({ name, url }, idx) => (
           <li key={idx}>
             <Link
@@ -282,16 +221,16 @@ const HeaderModel = () => {
         ))}
       </ul>
 
-      <div className="lg:flex hidden justify-center items-center gap-x-10">
+      {/* <div className="lg:flex hidden justify-center items-center gap-x-10">
         <a
           className="hover:text-[#666666] transition-colors duration-300 text-[#68a598] whitespace-nowrap leading-[130%]"
-          href={`tel:${tel}`}
+          href="tel:+375447320000"
         >
-          {tel}
+          &nbsp;
         </a>
-      </div>
+      </div> */}
 
-      <div className="lg:hidden block">
+      {/* <div className="lg:hidden block">
         {!open ? (
           <svg
             className="cursor-pointer"
@@ -433,13 +372,13 @@ const HeaderModel = () => {
 
           <a
             className="leading-[130%] border-t w-full pt-10 border-b-[#b6bcc2] text-[#68a598] mt-10 absolute"
-            href={`tel:${tel}`}
+            href="tel:+375447320000"
           >
-            {tel}
+            +375 44 732 00 00
           </a>
         </div>
-      </div>
+      </div> */}
     </header>
   );
 };
-export default HeaderModel;
+export default HeaderAdmin;

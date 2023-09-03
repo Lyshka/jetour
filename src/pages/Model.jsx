@@ -43,7 +43,7 @@ const Model = () => {
         info={model.info}
       />
 
-      <AboutModal about={model.about} to={model.title}/>
+      <AboutModal about={model.about} to={model.title} />
 
       <SliderModelSecond slides={model.slider} />
 
@@ -55,7 +55,7 @@ const Model = () => {
 
       <FormModal img={model.photoForm} />
 
-      <BottomMenu to={model.title}/>
+      <BottomMenu to={model.title} />
     </section>
   );
 };

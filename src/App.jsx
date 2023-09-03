@@ -1,17 +1,27 @@
-import { Route, Routes, useParams } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 import {
+  Admin,
+  AdminMain,
   Cars,
   Contacts,
   Credit,
   Guarantee,
+  Login,
   Main,
   Model,
   NewsAll,
+  Photo,
   Service,
   TradeIn,
 } from "./pages";
-import { Footer, Header, NewsSingle } from "./Components";
+import {
+  AboutAdminAdd,
+  AboutAdminMain,
+  Footer,
+  Header,
+  NewsSingle,
+} from "./Components";
 
 const App = () => {
   return (
@@ -25,6 +35,12 @@ const App = () => {
         <Route path="/tradein" element={<TradeIn />} />
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/newsall" element={<NewsAll />} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/admin-main" element={<AdminMain />} />
+        <Route path="/admin-about-main/:about" element={<AboutAdminAdd />} />
+        <Route path="/admin-about-main" element={<AboutAdminMain />} />
+        <Route path="/photo" element={<Photo />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/:id" element={<Model />} />
         <Route path="/:id/:car" element={<Cars />} />
         <Route path="/newsall/:news" element={<NewsSingle />} />
