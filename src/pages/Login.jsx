@@ -35,7 +35,7 @@ const Login = () => {
   }, []);
 
   return (
-    <div className="h-[calc(100vh-477px)] w-full flex justify-center items-center">
+    <div className="h-screen w-full flex justify-center items-center">
       <Toaster />
       <div
         className="w-11/12 p-12 sm:w-8/12 md:w-6/12 lg:w-5/12 2xl:w-4/12 
