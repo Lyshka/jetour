@@ -12,6 +12,10 @@ export const menu = [
     url: "/admin-about-main",
   },
   {
+    name: "Новости",
+    url: "/admin-news",
+  },
+  {
     name: "Медиафайлы",
     url: "/photo",
   },

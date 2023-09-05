@@ -12,7 +12,7 @@ const CardPhoto = ({ src, setSetpht }) => {
       }}
     >
       <img
-        className={`object-cover w-[200px] border-2 h-[200px] ${
+        className={`object-cover min-w-[200px] max-w-[200px] border-2 min-h-[200px] max-h-[200px] ${
           selected
             ? "border-gray-500 shadow-2xl border-4"
             : "border-gray-300 border-2"

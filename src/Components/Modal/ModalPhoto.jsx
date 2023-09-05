@@ -38,7 +38,7 @@ const ModalPhoto = ({ open, setOpen, setSetpht }) => {
           </div>
 
           <div className="flex justify-center items-center w-full h-full px-10">
-            <div className="grid grid-cols-9 overflow-y-scroll bg-white min-h-[800px] w-full gap-5 p-5">
+            <div className="grid grid-cols-6 overflow-y-scroll bg-white min-h-[800px] w-full gap-5 p-5">
               {photos.map((el) => {
                 return (
                   <CardPhoto

@@ -10,7 +10,10 @@ import {
   Login,
   Main,
   Model,
+  NewsAdmin,
+  NewsAdminAdd,
   NewsAll,
+  NotFound,
   PageSingle,
   Pages,
   Photo,
@@ -41,6 +44,8 @@ const App = () => {
         <Route path="/admin-main" element={<AdminMain />} />
         <Route path="/admin-about-main/:about" element={<AboutAdminAdd />} />
         <Route path="/admin-about-main" element={<AboutAdminMain />} />
+        <Route path="/admin-news" element={<NewsAdmin />} />
+        <Route path="/admin-news-add" element={<NewsAdminAdd />} />
         <Route path="/photo" element={<Photo />} />
         <Route path="/login" element={<Login />} />
         <Route path="/pages" element={<Pages />} />
@@ -48,6 +53,7 @@ const App = () => {
         <Route path="/:id" element={<Model />} />
         <Route path="/:id/:car" element={<Cars />} />
         <Route path="/newsall/:news" element={<NewsSingle />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </div>
