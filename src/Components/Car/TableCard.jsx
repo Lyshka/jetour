@@ -3,6 +3,8 @@ import { useState } from "react";
 const TableCard = ({ title, option, choose }) => {
   const [open, setOpen] = useState(false);
 
+  console.log(option);
+
   return (
     <div>
       <div
@@ -10,7 +12,7 @@ const TableCard = ({ title, option, choose }) => {
         className="w-full p-5 bg-[#F3F4F5] flex justify-start items-start rounded-[10px] cursor-pointer"
       >
         <div className="flex justify-start items-center gap-x-[6px]">
-          <h3 className="uppercase text-sm leading-5 font-bold text-[#505F79]">
+          <h3 className="uppercase lg:text-sm text-xl leading-5 font-bold text-[#505F79]">
             {title}
           </h3>
 
@@ -50,11 +52,7 @@ const TableCard = ({ title, option, choose }) => {
                       className={`w-[380px] first:w-[280px] flex transition-all first:text-[#505F79] duration-300 p-[10px] text-sm`}
                       key={idx}
                     >
-                      {typeof el.option[choose][idl] === "boolean"
-                        ? el.option[choose][idl]
-                          ? "+"
-                          : "-"
-                        : el.option[choose][idl]}
+                      {el.option[choose][idl].value}
                     </div>
                   );
                 })}
@@ -68,7 +66,7 @@ const TableCard = ({ title, option, choose }) => {
             return (
               <div key={idx} className="flex flex-col border-b pb-5">
                 <span className="font-bold leading-[19px] text-[#5D5F79]">
-                  {el}
+                  {el.value}
                 </span>
 
                 {option.slice(1, 4).map(({ title, option }, idl) => {
@@ -78,7 +76,7 @@ const TableCard = ({ title, option, choose }) => {
                         {title}
                       </p>
 
-                      <p className="w-1/2 text-sm leading-5 text-[#141B27]">{option[choose][idx]}</p>
+                      <p className="w-1/2 text-sm leading-5 text-[#141B27]">{option[choose][idx].value}</p>
                     </div>
                   );
                 })}

@@ -1,12 +1,36 @@
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
+
 import { NewsCard } from "../Components";
-import { news } from "../constants/news";
-import { useEffect } from "react";
 
 const NewsAll = () => {
+  const [news, setNews] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const getNews = async () => {
+    const { data } = await axios.get(
+      "https://jetour-mogilev.by/wp-json/wp/v2/news/?acf_format=standard"
+    );
+
+    setNews(data);
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    getNews();
+  }, []);
+
   useEffect(() => {
     window.document.title = "Новости"
   }, [])
+
+  if (loading)
+  return (
+    <div className="h-screen flex justify-center items-center w-full">
+      <div className="animate-pulse">Загрузка</div>
+    </div>
+  );
 
   return (
     <section className="py-[60px] flex justify-center items-center flex-col w-full">
@@ -16,9 +40,9 @@ const NewsAll = () => {
         </h1>
 
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 h-full w-full gap-x-[30px] gap-y-[60px] mt-[30px]">
-          {news.map(({ img, title, id }) => (
+          {news.map(({ acf, id }) => (
             <Link key={id} to={`${id}`}>
-              <NewsCard  img={img} title={title} />
+              <NewsCard  img={acf.img} title={acf.title} />
             </Link>
           ))}
         </div>

@@ -65,7 +65,7 @@ const SliderModelSecond = ({ slides }) => {
             );
           }}
         >
-          {slides.map((el, idx) => {
+          {slides?.map((el, idx) => {
             return (
               <div
                 key={idx}
@@ -74,7 +74,7 @@ const SliderModelSecond = ({ slides }) => {
                 <img
                   className={`md:max-w-[1300px] max-w-[350px] w-full md:pr-20 pr-[50px] h-full object-cover relative`}
                   src={el}
-                  alt=""
+                  alt="hfd"
                 />
               </div>
             );

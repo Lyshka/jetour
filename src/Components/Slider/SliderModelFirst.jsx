@@ -2,12 +2,17 @@ import { Carousel } from "@material-tailwind/react";
 import { useState } from "react";
 
 const SliderModelFirst = ({ title, interior, body, info }) => {
+  let set;
+
   const [value, setValue] = useState(false);
   const [slides, setSlides] = useState(body);
-  const [color, setColor] = useState(Object.keys(slides.color).shift());
+  const [color, setColor] = useState(body[0].color);
 
   return (
-    <section id="info" className="py-[60px] flex flex-col justify-center items-center md:px-10 px-5 w-full">
+    <section
+      id="info"
+      className="py-[60px] flex flex-col justify-center items-center md:px-10 px-5 w-full"
+    >
       <div className="flex max-w-[1280px] w-full flex-col justify-center items-center gap-y-[30px]">
         <h2 className="text-center md:text-5xl text-[32px] md:leading-[56px] leading-[42px] font-bold">
           {title}
@@ -18,7 +23,8 @@ const SliderModelFirst = ({ title, interior, body, info }) => {
             onClick={() => {
               setValue(false);
               setSlides(body);
-              setColor(Object.keys(slides.color).shift());
+              setColor(body[0].color);
+              set(0)
             }}
             className={`py-2 w-full px-5 leading-[18px] rounded-[15px] transition-all duration-150 text-center font-bold ${
               value
@@ -32,7 +38,8 @@ const SliderModelFirst = ({ title, interior, body, info }) => {
             onClick={() => {
               setValue(true);
               setSlides(interior);
-              setColor(Object.keys(slides.color).shift());
+              setColor(interior[0].color);
+              set(0)
             }}
             className={`py-2 px-5 leading-[18px] rounded-[15px] transition-all w-full duration-150 text-center font-bold ${
               value
@@ -93,39 +100,48 @@ const SliderModelFirst = ({ title, interior, body, info }) => {
             </div>
           )}
           className="flex touch-pan-x justify-start items-start overflow-hidden md:h-[500px] h-[200px] w-full"
-          navigation={({ setActiveIndex, activeIndex, length }) => (
-            <div className="absolute max-w-[900px] rounded w-full bottom-0 left-2/4 z-10 flex justify-center items-center -translate-x-2/4">
-              {new Array(length).fill("").map((_, i) => (
-                <span
-                  key={i}
-                  className={`block h-[2px] max-w-[80px] w-full cursor-pointer transition-all content-[''] ${
-                    activeIndex === i ? "bg-black" : "bg-[#cccccc]"
-                  }`}
-                  onClick={() => setActiveIndex(i)}
-                />
-              ))}
-            </div>
-          )}
+          navigation={({ setActiveIndex, activeIndex, length }) => {
+            set = setActiveIndex
+
+            return (
+              <div className="absolute max-w-[900px] rounded w-full bottom-0 left-2/4 z-10 flex justify-center items-center -translate-x-2/4">
+                {new Array(length).fill("").map((_, i) => (
+                  <span
+                    key={i}
+                    className={`block h-[2px] max-w-[80px] w-full cursor-pointer transition-all content-[''] ${
+                      activeIndex === i ? "bg-black" : "bg-[#cccccc]"
+                    }`}
+                    onClick={() => setActiveIndex(i)}
+                  />
+                ))}
+              </div>
+            );
+          }}
         >
-          {slides.color[color].map((el, idx) => (
-            <div key={idx} className="h-full bg-white w-screen">
-              <img
-                className="md:max-w-[900px] w-full md:pr-20 md:h-[457px] h-[170px] object-cover relative left-1/4 -translate-x-1/4"
-                src={el}
-                alt=""
-              />
-            </div>
-          ))}
+          {slides
+            .find((el) => el.color === color)
+            .Photos.map(({ url, ID }) => (
+              <div key={ID} className="h-full bg-white w-screen">
+                <img
+                  className="md:max-w-[900px] w-full md:pr-20 md:h-[457px] h-[170px] object-cover relative left-1/4 -translate-x-1/4"
+                  src={url}
+                  alt=""
+                />
+              </div>
+            ))}
         </Carousel>
 
         <div className="flex justify-center items-center md:mt-10">
-          {Object.keys(slides.color).map((el, idx) => (
+          {slides.map((sliderColor, idx) => (
             <div
-              onClick={() => setColor(el)}
-              style={{ background: el }}
+              onClick={() => {
+                setColor(sliderColor.color);
+                set(0);
+              }}
+              style={{ background: sliderColor.color }}
               key={idx}
               className={`w-6 h-6 border-2 border-[#F3F4F5] cursor-pointer rounded-[50%] ${
-                el === color ? "shadowColorPick" : ""
+                sliderColor.color === color ? "shadowColorPick" : ""
               }`}
             ></div>
           ))}

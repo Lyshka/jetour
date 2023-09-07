@@ -4,7 +4,7 @@ const Modal = ({ setOpen }) => {
   const [isCheck, setIsCheck] = useState(false);
 
   return (
-    <div className="h-screen w-full fixed bg-black/70 top-0 z-50 flex justify-center items-center lg:px-0 px-5">
+    <div className="h-screen w-full fixed bg-black/70 top-0 z-[60] flex justify-center items-center lg:px-0 px-5">
       <div
         onClick={() => setOpen((prv) => !prv)}
         className="absolute top-5 right-5 flex justify-center items-center border rounded-[50%] transition-all duration-300 cursor-pointer hover:bg-[#68A598] border-[#68A598] lg:w-10 lg:h-10 w-7 h-7 md:w-12 md:h-12"

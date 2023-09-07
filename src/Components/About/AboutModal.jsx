@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 const AboutModal = ({ about, to }) => {
   const { titlepage, descpage, img } = about;
 
+  console.log(descpage)
+
   return (
     <section className="pb-[60px] w-full flex justify-center items-center">
       <div className="max-w-[1280px] w-full flex-col justify-center items-center flex gap-y-[25px] md:px-5">

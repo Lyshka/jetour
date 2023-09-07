@@ -1,25 +1,47 @@
 import { useParams } from "react-router-dom";
 
-import { news } from "../../constants/news";
 import { NewsCard } from "../";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const NewsSingle = () => {
   const params = useParams();
 
+  const [news, setNews] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const getNews = async () => {
+    const { data } = await axios.get(
+      "https://jetour-mogilev.by/wp-json/wp/v2/news/?acf_format=standard"
+    );
+
+    setNews(data);
+    setLoading(false);
+  };
+
   const singleNews = news.find((el) => el.id == params.news);
   const newsByOne = news.filter((el) => el.id != params.news);
 
-  const { title, img, date, fulldesc } = singleNews;
+  useEffect(() => {
+    window.document.title = singleNews?.acf?.title;
+  }, []);
 
   useEffect(() => {
-    window.document.title = singleNews.title
-  }, [])
+    getNews();
+  }, []);
+
+  if (loading)
+    return (
+      <div className="h-screen flex justify-center items-center w-full">
+        <div className="animate-pulse">Загрузка</div>
+      </div>
+    );
+
   return (
     <>
       <div>
         <img
-          src={img}
+          src={singleNews.acf.img}
           alt="phtne"
           className="w-full max-h-[390px] h-full object-cover"
         />
@@ -28,15 +50,17 @@ const NewsSingle = () => {
           <div className="lg:max-w-[1280px] w-full flex justify-start items-start">
             <div className="flex flex-col lg:mt-0 mt-[30px] lg:px-0 px-5 w-full">
               <div className="lg:ml-[200px] lg:max-w-[585px] w-full">
-                <span className="text-sm leading-5 text-[#A5ADBA]">{date}</span>
+                <span className="text-sm leading-5 text-[#A5ADBA]">
+                  {singleNews.date.slice(0, 10).split("-").join(".")}
+                </span>
 
                 <h1 className="mt-[10px] w-full font-bold md:text-[40px] md:leading-[52px] text-2xl leading-8">
-                  {title}
+                  {singleNews.acf.title}
                 </h1>
 
                 <div
                   className="mt-[30px] mb-[30px] lg:text-base text-sm lg:leading-normal leading-5"
-                  dangerouslySetInnerHTML={{ __html: fulldesc }}
+                  dangerouslySetInnerHTML={{ __html: singleNews.acf.fulldesc }}
                 />
               </div>
 
@@ -108,12 +132,14 @@ const NewsSingle = () => {
 
       <div className="flex lg:bg-[#F3F4F5] lg:pt-[110px] pt-[55px] pb-[60px] flex-col justify-center items-center w-full">
         <div className="max-w-[1280px] lg:px-10 px-5 w-full flex flex-col justify-start items-start">
-          <h3 className="font-bold md:leading-[52px] md:text-[40px] text-2xl leading-8">Новости</h3>
+          <h3 className="font-bold md:leading-[52px] md:text-[40px] text-2xl leading-8">
+            Новости
+          </h3>
 
           <div className="mt-[60px] grid lg:grid-cols-3 md:grid-cols-2 gap-[30px] w-full">
-            {newsByOne.slice(0, 3).map(({ img, title, id }) => (
-              <a href={`/newsall/${id}`}>
-                <NewsCard key={id} img={img} title={title} />
+            {newsByOne.slice(0, 3).map(({ acf, id }) => (
+              <a key={id} href={`/newsall/${id}`}>
+                <NewsCard img={acf.img} title={acf.title} />
               </a>
             ))}
           </div>

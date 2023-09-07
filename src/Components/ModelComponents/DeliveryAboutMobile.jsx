@@ -26,9 +26,9 @@ const DeliveryAboutMobile = ({ isCar, delivery, deliver, setIsCar }) => {
             <h3 className="font-bold text-2xl leading-8">{isCar.title}</h3>
 
             <ul className="flex flex-col gap-y-[5px] mt-5">
-              {isCar.complect.map((el, idx) => (
+              {isCar.complect.map(({complectInside}, idx) => (
                 <li className="text-sm leading-5" key={idx}>
-                  -{el}
+                  -{complectInside}
                 </li>
               ))}
             </ul>

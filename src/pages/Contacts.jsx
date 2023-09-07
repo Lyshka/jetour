@@ -1,25 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { AboutContact, Map } from "../Components";
-import axios from "axios";
 
 const Contacts = () => {
-  const [mainInfo, setMainInfo] = useState([]);
-
-  const getMainInfo = async () => {
-    const { data } = await axios.get("http://localhost:3000/get-admin-main");
-
-    const newArr = data[0].contacts.split(",").map((el) => el.trim());
-
-    setMainInfo(newArr);
-  };
-
   useEffect(() => {
-    getMainInfo();
-  }, []);
-
-  useEffect(() => {
-    window.document.title = "Контакты";
-  }, []);
+    window.document.title = "Контакты"
+  }, [])
 
   return (
     <section>
@@ -35,15 +20,18 @@ const Contacts = () => {
         <div className="flex flex-col gap-y-[10px]">
           <h3 className="font-bold leading-[21px]">Телефоны</h3>
           <div className="flex flex-col">
-            {mainInfo.map((el, idx) => (
-              <a
-                key={idx}
-                className="hover:underline transition-all duration-300 hover:text-[#729394] text-[#68a598]"
-                href={`tel:${el}`}
-              >
-                {el}
-              </a>
-            ))}
+            <a
+              className="hover:underline transition-all duration-300 hover:text-[#729394] text-[#68a598]"
+              href="tel:+375447320000"
+            >
+              +375 44 732 00 00
+            </a>
+            <a
+              className="hover:underline transition-all duration-300 hover:text-[#729394] text-[#68a598]"
+              href="tel:+375447320000"
+            >
+              +375 29 224 40 04
+            </a>
           </div>
         </div>
       </div>

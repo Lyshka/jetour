@@ -1,29 +1,22 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-
-import { cars } from "../../constants/cars";
 import axios from "axios";
+
+import { menu } from "../../constants/menu";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
   const [openMenuMobile, setOpenMenuMobile] = useState(false);
-  const [tel, setTel] = useState("")
-  const [pages, setPages] = useState([]);
+  const [cars, setCars] = useState([]);
 
-  const getPages = async () => {
-    const { data } = await axios.get("http://localhost:3000/get-pages");
+  const getCars = async () => {
+    const { data } = await axios.get(
+      "https://jetour-mogilev.by/wp-json/wp/v2/car/?acf_format=standard"
+    );
 
-    setPages(data);
+    setCars(data);
   };
-
-  const getMainInfo = async () => {
-    const {data} = await axios.get("http://localhost:3000/get-admin-main")
-
-    const newArr = data[0].contacts.split(",").map(el => el.trim())
-
-    setTel(newArr[0])
-  }
 
   useEffect(() => {
     const id = window.document.getElementsByTagName("html");
@@ -31,13 +24,12 @@ const Header = () => {
     if (open) {
       id[0].style.overflow = "hidden";
     } else {
-      id[0].style.overflow = "scroll";
+      id[0].style.overflowY = "scroll";
     }
   }, [open]);
 
   useEffect(() => {
-    getMainInfo()
-    getPages()
+    getCars()
   }, [])
 
   return (
@@ -232,12 +224,12 @@ const Header = () => {
 
       <ul className="lg:flex hidden justify-center items-center gap-x-6">
         <li onMouseMove={() => setOpenMenu(true)}>
-          <Link
-            to={"/"}
+          <a
+            href={"/"}
             className="hover:text-[#666666] transition-colors duration-300 whitespace-nowrap"
           >
             Модельный ряд
-          </Link>
+          </a>
           {openMenu && (
             <div
               className={`fixed top-[80px] bg-white shadowCarMenu py-10 w-full left-0 flex justify-center items-center`}
@@ -248,28 +240,28 @@ const Header = () => {
               }}
             >
               <div className="grid grid-cols-3 px-10 gap-x-[50px]">
-                {cars.map(({ img, price, subtitle, title, model }, idx) => (
-                  <Link key={idx} to={model} onClick={() => setOpenMenu(false)}>
+                {cars.map(({ acf, id }) => (
+                  <Link key={id} to={acf.model} onClick={() => setOpenMenu(false)}>
                     <div
                       className="flex flex-col cursor-pointer justify-center items-center"
                     >
                       <div>
                         <img
                           className="w-60 h-[120px] object-cover"
-                          src={img}
-                          alt={title}
+                          src={acf.img}
+                          alt={acf.title}
                         />
                         <div className="flex flex-col mt-[10px] justify-center items-center">
                           <h2 className="text-center font-bold leading-5">
-                            {title}
+                            {acf.title}
                           </h2>
                           <p className="text-center leading-5 text-[#4c4c4c]">
-                            {subtitle}
+                            {acf.subtitle}
                           </p>
                         </div>
                       </div>
 
-                      <span className="mt-10 leading-5">От {price} р.</span>
+                      <span className="mt-10 leading-5">От {acf.price} р.</span>
                     </div>
                   </Link>
                 ))}
@@ -277,8 +269,8 @@ const Header = () => {
             </div>
           )}
         </li>
-        {pages.map(({ name, url, id }) => (
-          <li key={id}>
+        {menu.map(({ name, url }, idx) => (
+          <li key={idx}>
             <Link
               to={url}
               className="hover:text-[#666666] transition-colors duration-300 whitespace-nowrap"
@@ -292,9 +284,9 @@ const Header = () => {
       <div className="lg:flex hidden justify-center items-center gap-x-10">
         <a
           className="hover:text-[#666666] transition-colors duration-300 text-[#68a598] whitespace-nowrap leading-[130%]"
-          href={`tel:${tel}`}
+          href="tel:+375447320000"
         >
-          {tel}
+          +375 44 732 00 00
         </a>
       </div>
 
@@ -393,40 +385,39 @@ const Header = () => {
                   openMenuMobile ? "block" : "hidden"
                 } transition-all duration-300`}
               >
-                {cars.map(({ img, price, subtitle, title, model }, idx) => (
+                {cars.map(({ acf, id }) => (
                   <Link
-                    key={idx}
-                    to={model}
+                    key={id}
+                    to={acf.model}
                     onClick={() => setOpen((prv) => !prv)}
                   >
                     <div
-                      key={idx}
                       className="flex flex-col cursor-pointer justify-center items-center"
                     >
                       <div>
                         <img
                           className="w-[350px] h-[175px] object-cover"
-                          src={img}
-                          alt={title}
+                          src={acf.img}
+                          alt={acf.title}
                         />
                         <div className="flex flex-col mt-[10px] justify-center items-center">
                           <h2 className="text-center font-bold leading-5">
-                            {title}
+                            {acf.title}
                           </h2>
                           <p className="text-center leading-5 text-[#4c4c4c]">
-                            {subtitle}
+                            {acf.subtitle}
                           </p>
                         </div>
                       </div>
 
-                      <span className="mt-10 leading-5">От {price} р.</span>
+                      <span className="mt-10 leading-5">От {acf.price} р.</span>
                     </div>
                   </Link>
                 ))}
               </div>
             </div>
-            {pages.map(({ name, url, id }) => (
-              <div key={id}>
+            {menu.map(({ name, url }, idx) => (
+              <div key={idx}>
                 <Link
                   onClick={() => setOpen((prv) => !prv)}
                   to={url}
@@ -440,9 +431,9 @@ const Header = () => {
 
           <a
             className="leading-[130%] border-t w-full pt-10 border-b-[#b6bcc2] text-[#68a598] mt-10 absolute"
-            href={`tel:${tel}`}
+            href="tel:+375447320000"
           >
-            {tel}
+            +375 44 732 00 00
           </a>
         </div>
       </div>

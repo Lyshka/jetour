@@ -1,31 +1,20 @@
-import { useEffect, useState } from "react";
-import Layout from "../Components/Layout/Layout";
-import axios from "axios";
+import { useEffect } from "react"
+import Layout from "../Components/Layout/Layout"
 
 const Service = () => {
-  const [service, setService] = useState({});
-
-  const getPages = async () => {
-    const { data } = await axios.get("http://localhost:3000/get-pages");
-
-    setService(data[2]);
-  };
-
   useEffect(() => {
-    window.document.title = "Сервис";
-  }, []);
-
-  useEffect(() => {
-    getPages();
-  }, []);
+    window.document.title = "Сервис"
+  }, [])
 
   return (
-    <Layout
-      title={service.title}
-      desc={{
-        __html: service.description,
-      }}
-    />
-  );
-};
-export default Service;
+    <Layout title={"Официальный сервисный центр Jetour"} desc={{__html:`Автоцентр Jetour в Беларуси располагают высокотехнологичным сервисным центром, где работы по обслуживанию и ремонту ведутся в соответствии с требованиями компании Jetour с применением оригинального диагностического оборудования, специальных инструментов и оснастки для обслуживания и ремонта автомобилей Jetour. Мы обладаем полным комплектом специального оборудования и инструментов, гарантирующих высокое качество и минимальные затраты времени на выполнение работ.<br /><br /><br />
+
+
+    Фирменный сервис гарантирует:<br /><br />
+    
+    Каждая работа на фирменном сервисе выполняется в строгом соответствии с заказом клиента
+    Заявка выполняется в согласованные с клиентом сроки. В случае несвоевременного выполнения заказа, вас должны оповестить об этом заранее, сообщить причину и согласовать новый срок.
+    Клиент вправе потребовать объяснения каждой позиции выставленного счета.`}}/>
+  )
+}
+export default Service
