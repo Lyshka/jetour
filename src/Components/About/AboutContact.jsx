@@ -3,7 +3,7 @@ const AboutContact = () => {
     <section className="pt-[60px] lg:pb-[30px] lg:px-10 flex w-full items-center justify-center gap-x-[62px] lg:flex-row flex-col">
       <img
         className="lg:w-1/2 lg:h-[570px] h-[216px] w-full object-cover"
-        src="https://jetour-atlantm.by/uploads/contacts/kv/be/KVBed5SpGZ.png"
+        src="https://jetour-mogilev.by/wp-content/uploads/2023/09/KVBed5SpGZ.webp"
         alt="about"
       />
 

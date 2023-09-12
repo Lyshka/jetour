@@ -350,7 +350,7 @@ const Header = () => {
         <div
           className={`h-screen bg-white ${
             open ? "w-full right-0" : "w-0 -right-10"
-          } transition-all p-5 duration-500 absolute top-[60px] overflow-y-scroll`}
+          } transition-all p-5 overflow-x-hidden duration-500 absolute top-[60px] overflow-y-scroll`}
         >
           <div className="flex flex-col justify-start items-start gap-y-[30px]">
             <div

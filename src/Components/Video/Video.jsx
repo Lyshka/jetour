@@ -7,10 +7,14 @@ const Video = () => {
         loop={true}
         className="w-full h-full object-cover absolute top-0"
         src="https://jetour-atlantm.by/uploads/dealers-web-main/qi/8v/No subtitle(2).mp4"
-        controls={false}
         muted
         autoPlay
-      />
+        playsInline={true}
+        controls={false}
+      >
+        {/* <source src="video.mp4" type="video/mp4" />
+        <source src="video.ogv" type="video/ogg" /> */}
+      </video>
 
       <div className="relative flex flex-col gap-y-10 lg:gap-y-[60px] justify-center items-center lg:top-48 top-12">
         <h2 className="font-bold text-white lg:text-4xl text-[28px] lg:leading-[45px] leading-9 text-center uppercase">

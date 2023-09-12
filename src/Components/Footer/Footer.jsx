@@ -134,7 +134,7 @@ const Footer = () => {
             </li>
           </ul>
 
-          <div className="flex flex-col gap-y-4">
+          {/* <div className="flex flex-col gap-y-4">
             <div className="text-white font-bold leading-[21px]">
               Мобильное приложение
             </div>
@@ -151,7 +151,7 @@ const Footer = () => {
                 alt="adnroid"
               />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 

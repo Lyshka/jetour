@@ -1,6 +1,4 @@
 const NewsCard = ({ img, title }) => {
-  console.log(img, title)
-
   return (
     <div className="flex group flex-col justify-start items-start">
       <img

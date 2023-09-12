@@ -17,7 +17,7 @@ const Guarant = () => {
         <img
           className="object-cover lg:mt-0 mt-5 lg:ml-5 lg:max-w-[40%] w-full"
           src={
-            "https://jetour-atlantm.by/uploads/car-model-landing/dw/i4/Dwi4LF1GhE.png"
+            "https://jetour-mogilev.by/wp-content/uploads/2023/09/Dwi4LF1GhE-scaled.webp"
           }
           alt="guarant"
         />

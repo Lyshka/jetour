@@ -7,7 +7,7 @@ const About = () => {
     <section className="py-[30px] flex lg:flex-row flex-col w-full justify-center gap-x-[60px] items-start lg:px-10">
       <img
         className="object-cover w-full h-[396px] lg:w-[580px] lg:h-[275px]"
-        src="https://jetour-atlantm.by/uploads/dealers-web-main/xe/tm/XEtMXPsbOy.png"
+        src="https://jetour-mogilev.by/wp-content/uploads/2023/09/KVBed5SpGZ.webp"
         alt="about"
       />
 
