@@ -1,4 +1,5 @@
 import { Map, YMaps } from "@pbe/react-yandex-maps";
+import { telephone, telephoneLink } from "../../constants/general";
 
 const MapYandex = () => {
   return (
@@ -124,9 +125,9 @@ const MapYandex = () => {
                 </svg>
               </div>
 
-              <p className="text-sm text-[#4c4c4c] leading-[14px]">
+              {/* <p className="text-sm text-[#4c4c4c] leading-[14px]">
                 «Атлант-М на Независимости», официальный дилер
-              </p>
+              </p> */}
             </div>
 
             <svg
@@ -235,18 +236,18 @@ const MapYandex = () => {
               <h4 className="font-bold text-sm leading-[14px]">Адрес</h4>
 
               <p className="max-w-[270px] text-sm leading-[14px] text-[#4c4c4c]">
-                Республика Беларусь, г. Минск, проспект Независимости, 202/3
+                Республика Беларусь, г. Могилев, ул. Симонова, 71
               </p>
             </div>
 
-            <div className="flex flex-col justify-start items-start gap-y-[10px]">
+            {/* <div className="flex flex-col justify-start items-start gap-y-[10px]">
               <h4 className="font-bold text-sm leading-[14px]">Сервисы</h4>
 
               <p className="max-w-[270px] text-sm leading-[14px] text-[#4c4c4c]">
                 Отдел продаж автомобилей
                 <br /> Отдел сервиса и зап. частей
               </p>
-            </div>
+            </div> */}
           </div>
 
           <div className="w-full flex justify-start gap-x-5 items-center">
@@ -256,9 +257,9 @@ const MapYandex = () => {
               <p className="max-w-[270px] text-sm leading-[14px] text-[#4c4c4c]">
                 <a
                   className="hover:underline transition-all duration-300 hover:text-[#729394] text-[#68a598]"
-                  href="tel:+375447320000"
+                  href={`tel:${telephoneLink}`}
                 >
-                  +375 44 732 00 00
+                  {telephone}
                 </a>
               </p>
             </div>
