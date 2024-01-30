@@ -13,7 +13,7 @@ const MapYandex = () => {
           <Map
             width={"100%"}
             height={"364px"}
-            defaultState={{ center: [55.75, 37.57], zoom: 9 }}
+            defaultState={{ center: [53.863189, 30.311233], zoom: 18 }}
           />
         </YMaps>
         <div className="lg:absolute flex flex-col justify-start items-start z-20 lg:p-[30px] p-5 bg-white gap-y-5 w-full lg:w-[595px] top-1/2 left-16 -translate-y-1/2">
