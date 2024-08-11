@@ -22,6 +22,8 @@ const NewsSingle = () => {
   const singleNews = news.find((el) => el.id == params.news);
   const newsByOne = news.filter((el) => el.id != params.news);
 
+  console.log(singleNews)
+
   useEffect(() => {
     window.document.title = singleNews?.acf?.title;
   }, []);

@@ -3,8 +3,6 @@ import { useState } from "react";
 const TableCard = ({ title, option, choose }) => {
   const [open, setOpen] = useState(false);
 
-  console.log(option);
-
   return (
     <div>
       <div

@@ -1,8 +1,13 @@
 import Option from "./Option";
 
 const Hang = ({ hang }) => {
+  if (!hang) return;
+
   return (
-    <section id="osob" className="py-[60px] bg-[#F3F4F5] w-full flex justify-center items-center flex-col relative">
+    <section
+      id="osob"
+      className="py-[60px] bg-[#F3F4F5] w-full flex justify-center items-center flex-col relative"
+    >
       <h2 className="w-full text-center lg:text-5xl text-[32px] lg:leading-[56px] leading-[42px] font-bold">
         Особенности
       </h2>
