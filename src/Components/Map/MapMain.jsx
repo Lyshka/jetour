@@ -236,7 +236,7 @@ const MapYandex = () => {
               <h4 className="font-bold text-sm leading-[14px]">Адрес</h4>
 
               <p className="max-w-[270px] text-sm leading-[14px] text-[#4c4c4c]">
-                Республика Беларусь, г. Могилев, ул. Симонова, 71
+                Республика Беларусь, г. Могилев, ул. Минское шоссе, 1Е
               </p>
             </div>
 
